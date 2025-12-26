@@ -7,22 +7,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-900: #1a2332;
-            --primary-800: #252f3f;
-            --primary-700: #374151;
-            --primary-600: #4b5563;
-            --primary-500: #6b7280;
-            --primary-400: #9ca3af;
-            --primary-300: #d1d5db;
-            --primary-200: #e5e7eb;
-            --primary-100: #f3f4f6;
-            --primary-50: #f9fafb;
-            --accent: #3b82f6;
-            --accent-dark: #2563eb;
-            --accent-light: #dbeafe;
+            --slate-800: #1e293b;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-500: #64748b;
+            --slate-400: #94a3b8;
+            --slate-300: #cbd5e1;
+            --slate-200: #e2e8f0;
+            --slate-100: #f1f5f9;
+            --slate-50: #f8fafc;
             --wit: #ffffff;
-            --tekst: #1f2937;
-            --tekst-licht: #6b7280;
         }
 
         * {
@@ -32,150 +26,114 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--primary-100);
-            color: var(--tekst);
-            line-height: 1.5;
-            font-size: 15px;
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--slate-100);
+            color: var(--slate-700);
+            line-height: 1.6;
+            min-height: 100vh;
             -webkit-font-smoothing: antialiased;
         }
 
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+        }
+
         /* Header */
-        .header {
-            background: var(--primary-900);
-            color: var(--wit);
-            padding: 1.5rem 2rem;
-            border-bottom: 3px solid var(--accent);
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
-        .header-inner {
-            max-width: 720px;
-            margin: 0 auto;
-        }
-
-        .header h1 {
-            font-size: 1.375rem;
-            font-weight: 600;
+        h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--slate-800);
             letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
         }
 
-        .header p {
-            font-size: 0.9375rem;
-            color: var(--primary-300);
-            margin-top: 0.25rem;
+        .subtitle {
+            font-size: 1rem;
+            color: var(--slate-500);
         }
 
-        /* Main */
-        .main {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 2rem;
+        /* Grid layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
         }
 
-        /* Card */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .span-2 {
+            grid-column: span 2;
+        }
+
+        /* Cards */
         .card {
             background: var(--wit);
-            border: 1px solid var(--primary-200);
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
         }
 
-        .card-header {
-            background: var(--primary-800);
-            padding: 0.75rem 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.625rem;
-        }
-
-        .card-nummer {
-            width: 22px;
-            height: 22px;
-            background: var(--accent);
-            color: var(--wit);
+        .card-label {
+            font-size: 0.6875rem;
             font-weight: 600;
-            font-size: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--slate-400);
+            margin-bottom: 0.375rem;
         }
 
-        .card-header h2 {
-            font-size: 0.875rem;
+        .card-title {
+            font-size: 1rem;
             font-weight: 600;
-            color: var(--wit);
+            color: var(--slate-800);
+            margin-bottom: 0.625rem;
             letter-spacing: -0.01em;
         }
 
-        .card-body {
-            padding: 1.25rem;
-        }
-
-        /* Info blok */
-        .info {
-            background: var(--primary-50);
-            border-left: 3px solid var(--primary-400);
-            padding: 0.875rem 1rem;
-            margin-bottom: 1rem;
-            border-radius: 0 4px 4px 0;
-        }
-
-        .info p {
+        .card-desc {
             font-size: 0.8125rem;
-            color: var(--tekst-licht);
-            margin: 0;
-            line-height: 1.6;
+            color: var(--slate-500);
+            line-height: 1.55;
+            margin-bottom: 1.25rem;
         }
 
-        .info strong {
-            color: var(--tekst);
-            font-weight: 600;
-        }
-
-        /* Form */
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group:last-child {
-            margin-bottom: 0;
-        }
-
-        .form-label {
-            display: block;
-            font-size: 0.8125rem;
-            font-weight: 600;
-            color: var(--primary-700);
-            margin-bottom: 0.375rem;
-            text-transform: uppercase;
-            letter-spacing: 0.025em;
-        }
-
+        /* Invoer */
         .input-wrap {
             position: relative;
         }
 
-        input[type="number"] {
+        .input-field {
             width: 100%;
-            padding: 0.75rem 1rem;
-            padding-right: 5rem;
-            font-size: 1rem;
+            padding: 0.875rem 1rem;
+            font-size: 1.0625rem;
             font-family: inherit;
             font-weight: 500;
-            border: 1px solid var(--primary-300);
-            border-radius: 6px;
+            border: 1.5px solid var(--slate-200);
+            border-radius: 8px;
             background: var(--wit);
-            color: var(--tekst);
+            color: var(--slate-800);
             transition: border-color 0.15s, box-shadow 0.15s;
         }
 
-        input[type="number"]:focus {
+        .input-field:focus {
             outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px var(--accent-light);
+            border-color: var(--slate-400);
+            box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.15);
+        }
+
+        .input-field.has-suffix {
+            padding-right: 5rem;
         }
 
         .input-suffix {
@@ -184,80 +142,76 @@
             top: 50%;
             transform: translateY(-50%);
             font-size: 0.8125rem;
-            color: var(--primary-500);
+            color: var(--slate-400);
             font-weight: 500;
         }
 
-        /* Button group */
-        .btn-group {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        /* Pills */
+        .pills {
+            display: flex;
             gap: 0.5rem;
         }
 
-        .btn-option {
-            padding: 0.875rem 0.5rem;
+        .pill {
+            flex: 1;
+            padding: 0.75rem 0.5rem;
             font-size: 0.9375rem;
             font-family: inherit;
             font-weight: 600;
-            border: 2px solid var(--primary-200);
-            border-radius: 6px;
+            text-align: center;
+            border: 1.5px solid var(--slate-200);
+            border-radius: 8px;
             background: var(--wit);
-            color: var(--primary-600);
+            color: var(--slate-600);
             cursor: pointer;
             transition: all 0.15s;
-            text-align: center;
         }
 
-        .btn-option:hover {
-            border-color: var(--primary-400);
-            background: var(--primary-50);
+        .pill:hover {
+            border-color: var(--slate-300);
+            background: var(--slate-50);
         }
 
-        .btn-option.actief {
-            background: var(--primary-800);
-            border-color: var(--primary-800);
+        .pill.active {
+            background: var(--slate-700);
+            border-color: var(--slate-700);
             color: var(--wit);
         }
 
-        .btn-option small {
+        .pill small {
             display: block;
-            font-size: 0.6875rem;
+            font-size: 0.625rem;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.05em;
             margin-top: 0.125rem;
-            opacity: 0.7;
+            opacity: 0.65;
         }
 
         /* Slider */
-        .slider-wrap {
-            padding: 0.25rem 0;
-        }
-
         .slider-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 0.625rem;
+            margin-bottom: 0.75rem;
         }
 
-        .slider-header span {
+        .slider-label {
             font-size: 0.8125rem;
-            color: var(--tekst-licht);
+            color: var(--slate-500);
         }
 
         .slider-value {
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            color: var(--primary-800);
+            color: var(--slate-700);
         }
 
         input[type="range"] {
             -webkit-appearance: none;
             width: 100%;
             height: 6px;
-            background: var(--primary-200);
+            background: var(--slate-200);
             border-radius: 3px;
             cursor: pointer;
         }
@@ -266,10 +220,10 @@
             -webkit-appearance: none;
             width: 20px;
             height: 20px;
-            background: var(--primary-800);
+            background: var(--slate-600);
             border-radius: 50%;
             cursor: pointer;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
             transition: transform 0.1s;
         }
 
@@ -280,60 +234,54 @@
         input[type="range"]::-moz-range-thumb {
             width: 20px;
             height: 20px;
-            background: var(--primary-800);
+            background: var(--slate-600);
             border-radius: 50%;
             cursor: pointer;
             border: none;
         }
 
-        .slider-labels {
+        .slider-ticks {
             display: flex;
             justify-content: space-between;
-            margin-top: 0.375rem;
+            margin-top: 0.5rem;
             font-size: 0.6875rem;
-            color: var(--primary-400);
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-        }
-
-        /* Submit */
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            font-size: 0.9375rem;
-            font-family: inherit;
-            font-weight: 600;
-            background: var(--accent);
-            color: var(--wit);
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.15s;
-            letter-spacing: -0.01em;
-        }
-
-        .submit-btn:hover {
-            background: var(--accent-dark);
+            color: var(--slate-400);
         }
 
         /* Resultaat */
-        .resultaat {
-            margin-top: 1.5rem;
+        .resultaat-section {
+            margin-top: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .resultaat-card {
+            background: var(--wit);
+            border-radius: 12px;
+            padding: 2rem;
+            color: var(--slate-700);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+            border: 1.5px solid var(--slate-200);
+        }
+
+        .resultaat-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: center;
         }
 
         .resultaat-main {
-            background: var(--primary-900);
-            border-radius: 8px;
-            padding: 2rem;
             text-align: center;
-            color: var(--wit);
+            padding-right: 2rem;
+            border-right: 1px solid var(--slate-200);
+            min-width: 240px;
         }
 
         .resultaat-label {
-            font-size: 0.8125rem;
+            font-size: 0.6875rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--primary-400);
+            letter-spacing: 0.12em;
+            color: var(--slate-400);
             margin-bottom: 0.5rem;
         }
 
@@ -342,528 +290,455 @@
             font-weight: 700;
             line-height: 1;
             letter-spacing: -0.03em;
-            color: var(--wit);
+            color: var(--slate-600);
+            min-width: 180px;
+            display: inline-block;
         }
 
         .resultaat-eenheid {
             font-size: 0.875rem;
-            color: var(--primary-400);
+            color: var(--slate-500);
             margin-top: 0.25rem;
         }
 
         .resultaat-meta {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: var(--primary-700);
-            margin-top: 1.5rem;
-            border-radius: 6px;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            min-width: 200px;
         }
 
-        .meta-item {
-            background: var(--primary-800);
-            padding: 1rem;
-            text-align: center;
+        .meta-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
         }
 
         .meta-label {
-            font-size: 0.6875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            color: var(--primary-400);
-            margin-bottom: 0.25rem;
+            font-size: 0.75rem;
+            color: var(--slate-400);
         }
 
         .meta-value {
             font-size: 1rem;
             font-weight: 600;
-            color: var(--wit);
+            color: var(--slate-700);
+            min-width: 60px;
+            text-align: right;
         }
 
         /* Uitleg sectie */
-        .uitleg {
+        .uitleg-section {
+            margin-top: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--slate-400);
+            margin-bottom: 1rem;
+        }
+
+        .uitleg-card {
             background: var(--wit);
-            border: 1px solid var(--primary-200);
-            border-radius: 8px;
-            margin-top: 1rem;
-            overflow: hidden;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         }
 
-        .uitleg-header {
-            background: var(--primary-50);
-            padding: 0.875rem 1.25rem;
-            border-bottom: 1px solid var(--primary-200);
-        }
-
-        .uitleg-header h3 {
-            font-size: 0.8125rem;
-            font-weight: 600;
-            color: var(--primary-700);
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-
-        .uitleg-body {
-            padding: 1.25rem;
-        }
-
-        .uitleg-body > p {
+        .uitleg-card h4 {
             font-size: 0.875rem;
-            color: var(--tekst-licht);
-            margin-bottom: 1rem;
-        }
-
-        /* Voorbeeld */
-        .voorbeeld {
-            background: var(--accent-light);
-            border-radius: 6px;
-            padding: 1rem 1.25rem;
-            margin-bottom: 1rem;
-        }
-
-        .voorbeeld-titel {
-            font-size: 0.75rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            color: var(--accent-dark);
+            color: var(--slate-700);
             margin-bottom: 0.375rem;
         }
 
-        .voorbeeld p {
-            font-size: 0.875rem;
-            color: var(--primary-700);
+        .uitleg-card p {
+            font-size: 0.8125rem;
+            color: var(--slate-500);
+            line-height: 1.55;
             margin: 0;
         }
 
-        .voorbeeld .mark {
-            background: var(--wit);
-            padding: 0.125em 0.375em;
-            border-radius: 3px;
-            font-weight: 600;
-            color: var(--primary-800);
-        }
-
         /* Formule */
-        .formule-blok {
-            background: var(--primary-50);
-            border: 1px solid var(--primary-200);
-            border-radius: 6px;
-            padding: 1.25rem;
-            margin-bottom: 1rem;
+        .formule-card {
+            background: var(--wit);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         }
 
-        .formule-titel {
-            font-size: 0.75rem;
+        .formule-card h4 {
+            font-size: 0.875rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            color: var(--primary-600);
-            margin-bottom: 0.75rem;
+            color: var(--slate-700);
+            margin-bottom: 1rem;
         }
 
         .formule {
             font-family: 'SF Mono', 'Consolas', monospace;
             font-size: 1rem;
-            font-weight: 600;
-            color: var(--primary-800);
+            font-weight: 500;
+            color: var(--slate-700);
             text-align: center;
-            background: var(--wit);
             padding: 0.875rem;
-            border-radius: 4px;
+            background: var(--slate-100);
+            border-radius: 6px;
             margin-bottom: 1rem;
-            border: 1px solid var(--primary-200);
         }
 
         .formule-vars {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 0.25rem 0.75rem;
-            font-size: 0.8125rem;
-            color: var(--tekst-licht);
-        }
-
-        .formule-vars dt {
-            font-family: 'SF Mono', 'Consolas', monospace;
-            font-weight: 600;
-            color: var(--primary-700);
-        }
-
-        /* Tips */
-        .tips {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
-        }
-
-        .tip {
-            background: var(--primary-50);
-            border-radius: 6px;
-            padding: 1rem;
-        }
-
-        .tip-titel {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.5rem;
             font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-            color: var(--primary-600);
-            margin-bottom: 0.375rem;
+            color: var(--slate-500);
         }
 
-        .tip p {
-            font-size: 0.8125rem;
-            color: var(--tekst-licht);
-            margin: 0;
-            line-height: 1.5;
+        .formule-vars span {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .formule-vars strong {
+            font-family: 'SF Mono', monospace;
+            font-weight: 600;
+            color: var(--slate-600);
         }
 
         /* Let op */
-        .letop {
-            background: #fef3c7;
-            border: 1px solid #f59e0b;
-            border-radius: 6px;
-            padding: 1rem 1.25rem;
-            margin-top: 1rem;
+        .letop-card {
+            background: var(--slate-100);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            color: var(--slate-700);
+            border: 1.5px solid var(--slate-200);
         }
 
-        .letop-titel {
+        .letop-card h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.375rem;
+            color: var(--slate-700);
+        }
+
+        .letop-card p {
+            font-size: 0.8125rem;
+            line-height: 1.55;
+            color: var(--slate-500);
+            margin: 0;
+        }
+
+        .letop-card strong {
+            font-weight: 600;
+            color: var(--slate-700);
+        }
+
+        /* Voorbeeld */
+        .voorbeeld-card {
+            background: var(--slate-100);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            border: 1.5px solid var(--slate-200);
+        }
+
+        .voorbeeld-card h4 {
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.04em;
-            color: #b45309;
-            margin-bottom: 0.375rem;
+            letter-spacing: 0.05em;
+            color: var(--slate-500);
+            margin-bottom: 0.5rem;
         }
 
-        .letop p {
-            font-size: 0.8125rem;
-            color: #92400e;
+        .voorbeeld-card p {
+            font-size: 0.875rem;
+            color: var(--slate-600);
+            line-height: 1.55;
             margin: 0;
-            line-height: 1.5;
         }
 
-        /* Verborgen */
-        .verborgen {
-            display: none;
-        }
-
-        /* Animatie */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .resultaat.toon {
-            animation: fadeIn 0.25s ease;
+        .voorbeeld-card .mark {
+            background: var(--wit);
+            padding: 0.125em 0.375em;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--slate-700);
         }
 
         /* Responsive */
-        @media (max-width: 600px) {
-            .header {
-                padding: 1.25rem 1rem;
+        @media (max-width: 700px) {
+            .container {
+                padding: 2rem 1.25rem 3rem;
             }
 
-            .main {
-                padding: 1rem;
+            h1 {
+                font-size: 1.5rem;
             }
 
-            .card-body {
-                padding: 1rem;
-            }
-
-            .btn-group {
+            .grid-2 {
                 grid-template-columns: 1fr;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .span-2 {
+                grid-column: span 1;
+            }
+
+            .resultaat-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
             .resultaat-main {
-                padding: 1.5rem;
+                padding-right: 0;
+                padding-bottom: 1.5rem;
+                border-right: none;
+                border-bottom: 1px solid var(--slate-200);
             }
 
             .resultaat-getal {
-                font-size: 2.75rem;
+                font-size: 3rem;
             }
 
             .resultaat-meta {
-                grid-template-columns: 1fr;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 1rem;
             }
 
-            .tips {
-                grid-template-columns: 1fr;
+            .meta-row {
+                flex: 1;
+                min-width: 100px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .pills {
+                flex-direction: column;
             }
         }
 
         /* Footer */
-        .footer {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem;
+        footer {
             text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--slate-200);
         }
 
-        .footer p {
+        footer p {
             font-size: 0.75rem;
-            color: var(--primary-400);
+            color: var(--slate-400);
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="header-inner">
+    <div class="container">
+        <header>
             <h1>Steekproefcalculator</h1>
-            <p>Bereken de benodigde steekproefgrootte voor uw onderzoek</p>
-        </div>
-    </header>
+            <p class="subtitle">Bereken de benodigde steekproefgrootte voor uw onderzoek</p>
+        </header>
 
-    <main class="main">
-        <!-- Stap 1 -->
-        <div class="card">
-            <div class="card-header">
-                <span class="card-nummer">1</span>
-                <h2>Populatiegrootte</h2>
-            </div>
-            <div class="card-body">
-                <div class="info">
-                    <p>De <strong>populatie</strong> is de volledige groep die u wilt onderzoeken. Bijvoorbeeld: alle inwoners van een gemeente, alle klanten, of alle medewerkers.</p>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Totale groepsgrootte</label>
-                    <div class="input-wrap">
-                        <input type="number" id="populatie" value="10000" min="10" max="100000000">
-                        <span class="input-suffix">personen</span>
+        <!-- Resultaat bovenaan -->
+        <section class="resultaat-section">
+            <div class="resultaat-card">
+                <div class="resultaat-grid">
+                    <div class="resultaat-main">
+                        <p class="resultaat-label">Benodigde steekproef</p>
+                        <p class="resultaat-getal" id="resultaatGetal">384</p>
+                        <p class="resultaat-eenheid">respondenten</p>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Stap 2 -->
-        <div class="card">
-            <div class="card-header">
-                <span class="card-nummer">2</span>
-                <h2>Betrouwbaarheidsniveau</h2>
-            </div>
-            <div class="card-body">
-                <div class="info">
-                    <p>Het <strong>betrouwbaarheidsniveau</strong> geeft aan hoe zeker u bent dat het resultaat klopt. Bij 95%: als u het onderzoek 100 keer herhaalt, valt de werkelijke waarde 95 keer binnen de foutmarge.</p>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Kies niveau</label>
-                    <div class="btn-group">
-                        <button type="button" class="btn-option" data-z="1.645" data-niveau="90">
-                            90%
-                            <small>Verkennend</small>
-                        </button>
-                        <button type="button" class="btn-option actief" data-z="1.96" data-niveau="95">
-                            95%
-                            <small>Standaard</small>
-                        </button>
-                        <button type="button" class="btn-option" data-z="2.576" data-niveau="99">
-                            99%
-                            <small>Streng</small>
-                        </button>
-                    </div>
-                </div>
-                <input type="hidden" id="zScore" value="1.96">
-                <input type="hidden" id="betrouwbaarheid" value="95">
-            </div>
-        </div>
-
-        <!-- Stap 3 -->
-        <div class="card">
-            <div class="card-header">
-                <span class="card-nummer">3</span>
-                <h2>Foutmarge</h2>
-            </div>
-            <div class="card-body">
-                <div class="info">
-                    <p>De <strong>foutmarge</strong> is de maximale afwijking die u accepteert. Bij 5% foutmarge en een resultaat van 60%: de werkelijke waarde ligt tussen 55% en 65%.</p>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Toegestane afwijking</label>
-                    <div class="slider-wrap">
-                        <div class="slider-header">
-                            <span>Nauwkeurigheid</span>
-                            <span class="slider-value" id="foutmargeWaarde">±5%</span>
+                    <div class="resultaat-meta">
+                        <div class="meta-row">
+                            <span class="meta-label">Betrouwbaarheid</span>
+                            <span class="meta-value" id="metaBetrouwbaarheid">95%</span>
                         </div>
-                        <input type="range" id="foutmarge" min="1" max="10" value="5" step="0.5">
-                        <div class="slider-labels">
-                            <span>Zeer nauwkeurig</span>
-                            <span>Globaal beeld</span>
+                        <div class="meta-row">
+                            <span class="meta-label">Foutmarge</span>
+                            <span class="meta-value" id="metaFoutmarge">±5%</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Steekproeffractie</span>
+                            <span class="meta-value" id="metaFractie">3,84%</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Stap 4 -->
-        <div class="card">
-            <div class="card-header">
-                <span class="card-nummer">4</span>
-                <h2>Verwachte proportie</h2>
-            </div>
-            <div class="card-body">
-                <div class="info">
-                    <p>De <strong>verwachte proportie</strong> is uw schatting van het resultaat. Onzeker? Kies 50% — dat levert de grootste (en dus veiligste) steekproef op.</p>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Geschatte uitkomst</label>
-                    <div class="slider-wrap">
-                        <div class="slider-header">
-                            <span>Proportie</span>
-                            <span class="slider-value" id="proportieWaarde">50%</span>
-                        </div>
-                        <input type="range" id="proportie" min="5" max="95" value="50" step="5">
-                        <div class="slider-labels">
-                            <span>5%</span>
-                            <span>50%</span>
-                            <span>95%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <button class="submit-btn" onclick="bereken()">Bereken steekproefgrootte</button>
-
-        <!-- Resultaat -->
-        <div id="resultaat" class="resultaat verborgen">
-            <div class="resultaat-main">
-                <p class="resultaat-label">Benodigde steekproef</p>
-                <p class="resultaat-getal" id="steekproefGrootte">384</p>
-                <p class="resultaat-eenheid">respondenten</p>
-                
-                <div class="resultaat-meta">
-                    <div class="meta-item">
-                        <p class="meta-label">Betrouwbaarheid</p>
-                        <p class="meta-value" id="resBetrouwbaarheid">95%</p>
-                    </div>
-                    <div class="meta-item">
-                        <p class="meta-label">Foutmarge</p>
-                        <p class="meta-value" id="resFoutmarge">±5%</p>
-                    </div>
-                    <div class="meta-item">
-                        <p class="meta-label">Steekproeffractie</p>
-                        <p class="meta-value" id="resAandeel">3,84%</p>
-                    </div>
+        <!-- Invoer: 2x2 grid -->
+        <div class="grid-2">
+            <!-- Populatie -->
+            <div class="card">
+                <p class="card-label">Stap 1</p>
+                <h3 class="card-title">Populatiegrootte</h3>
+                <p class="card-desc">De volledige groep die u wilt onderzoeken. Bijvoorbeeld alle inwoners van een gemeente.</p>
+                <div class="input-wrap">
+                    <input type="number" class="input-field has-suffix" id="populatie" value="10000" min="10" oninput="bereken()">
+                    <span class="input-suffix">personen</span>
                 </div>
             </div>
 
-            <div class="uitleg">
-                <div class="uitleg-header">
-                    <h3>Interpretatie</h3>
+            <!-- Betrouwbaarheid -->
+            <div class="card">
+                <p class="card-label">Stap 2</p>
+                <h3 class="card-title">Betrouwbaarheidsniveau</h3>
+                <p class="card-desc">Hoe zeker wilt u zijn dat het resultaat klopt? 95% is de standaard in onderzoek.</p>
+                <div class="pills">
+                    <button class="pill" data-z="1.645" data-n="90" onclick="kiesNiveau(this)">90%<small>Verkennend</small></button>
+                    <button class="pill active" data-z="1.96" data-n="95" onclick="kiesNiveau(this)">95%<small>Standaard</small></button>
+                    <button class="pill" data-z="2.576" data-n="99" onclick="kiesNiveau(this)">99%<small>Streng</small></button>
                 </div>
-                <div class="uitleg-body">
-                    <div class="voorbeeld">
-                        <p class="voorbeeld-titel">Voorbeeld</p>
-                        <p>Stel dat <span class="mark" id="vbPercentage">60%</span> van uw steekproef "ja" antwoordt. Dan ligt de werkelijke waarde in de populatie met <span class="mark" id="vbBetrouwbaarheid">95%</span> zekerheid tussen <span class="mark" id="vbOnder">55%</span> en <span class="mark" id="vbBoven">65%</span>.</p>
-                    </div>
+            </div>
 
-                    <div class="formule-blok">
-                        <p class="formule-titel">Formule van Cochran</p>
-                        <p class="formule">n = (Z² × p × (1−p)) / e²</p>
-                        <dl class="formule-vars">
-                            <dt>n</dt><dd>benodigde steekproefgrootte</dd>
-                            <dt>Z</dt><dd>z-score (1,96 bij 95%)</dd>
-                            <dt>p</dt><dd>verwachte proportie</dd>
-                            <dt>e</dt><dd>foutmarge</dd>
-                        </dl>
-                    </div>
+            <!-- Foutmarge -->
+            <div class="card">
+                <p class="card-label">Stap 3</p>
+                <h3 class="card-title">Foutmarge</h3>
+                <p class="card-desc">De maximale afwijking die u accepteert. Kleinere marge = meer respondenten nodig.</p>
+                <div class="slider-header">
+                    <span class="slider-label">Toegestane afwijking</span>
+                    <span class="slider-value" id="foutmargeWaarde">±5%</span>
+                </div>
+                <input type="range" id="foutmarge" min="1" max="10" value="5" step="0.5" oninput="updateFoutmarge()">
+                <div class="slider-ticks">
+                    <span>1%</span>
+                    <span>5%</span>
+                    <span>10%</span>
+                </div>
+            </div>
 
-                    <div class="tips">
-                        <div class="tip">
-                            <p class="tip-titel">Grote populaties</p>
-                            <p>Boven 20.000 personen maakt de exacte grootte weinig uit. De benodigde steekproef blijft nagenoeg gelijk.</p>
-                        </div>
-                        <div class="tip">
-                            <p class="tip-titel">Kleine populaties</p>
-                            <p>Bij kleine groepen past de formule een correctie toe. U heeft dan relatief meer respondenten nodig.</p>
-                        </div>
-                    </div>
-
-                    <div class="letop">
-                        <p class="letop-titel">Houd rekening met non-respons</p>
-                        <p>Niet iedereen reageert. Bij een verwacht responspercentage van 40% moet u <strong id="uitnodigingen">960</strong> personen uitnodigen om <strong id="benodigdVoor">384</strong> reacties te krijgen.</p>
-                    </div>
+            <!-- Proportie -->
+            <div class="card">
+                <p class="card-label">Stap 4</p>
+                <h3 class="card-title">Verwachte proportie</h3>
+                <p class="card-desc">Uw schatting van de uitkomst. Onzeker? Kies 50% voor de veiligste berekening.</p>
+                <div class="slider-header">
+                    <span class="slider-label">Geschatte uitkomst</span>
+                    <span class="slider-value" id="proportieWaarde">50%</span>
+                </div>
+                <input type="range" id="proportie" min="5" max="95" value="50" step="5" oninput="updateProportie()">
+                <div class="slider-ticks">
+                    <span>5%</span>
+                    <span>50%</span>
+                    <span>95%</span>
                 </div>
             </div>
         </div>
-    </main>
 
-    <footer class="footer">
-        <p>Gebaseerd op de formule van Cochran met eindige-populatiecorrectie</p>
-    </footer>
+        <!-- Uitleg sectie -->
+        <section class="uitleg-section">
+            <p class="section-title">Uitleg & achtergrond</p>
+            
+            <div class="grid-2" style="margin-bottom: 1.25rem;">
+                <div class="voorbeeld-card">
+                    <h4>Voorbeeld</h4>
+                    <p>Stel dat <span class="mark" id="vbPct">60%</span> van uw steekproef "ja" antwoordt. Dan ligt de werkelijke waarde met <span class="mark" id="vbConf">95%</span> zekerheid tussen <span class="mark" id="vbLo">55%</span> en <span class="mark" id="vbHi">65%</span>.</p>
+                </div>
+                <div class="letop-card">
+                    <h4>Let op: non-respons</h4>
+                    <p>Niet iedereen reageert. Bij 40% respons moet u <strong id="uitnodigingen">960</strong> personen benaderen voor <strong id="benodigdVoor">384</strong> reacties.</p>
+                </div>
+            </div>
+
+            <div class="grid-3">
+                <div class="uitleg-card">
+                    <h4>Grote populaties</h4>
+                    <p>Boven 20.000 personen maakt de exacte grootte weinig uit. De benodigde steekproef blijft nagenoeg constant.</p>
+                </div>
+                <div class="uitleg-card">
+                    <h4>Kleine populaties</h4>
+                    <p>Bij kleine groepen is de eindige-populatiecorrectie belangrijk. U heeft relatief meer respondenten nodig.</p>
+                </div>
+                <div class="uitleg-card">
+                    <h4>Proportie 50%</h4>
+                    <p>Bij 50% is de variatie maximaal. Dit geeft de grootste steekproef en is de veiligste keuze bij onzekerheid.</p>
+                </div>
+            </div>
+
+            <div class="formule-card" style="margin-top: 1.25rem;">
+                <h4>Formule van Cochran</h4>
+                <p class="formule">n = (Z² × p × (1−p)) / e²</p>
+                <div class="formule-vars">
+                    <span><strong>n</strong> steekproefgrootte</span>
+                    <span><strong>Z</strong> z-score (1,96 bij 95%)</span>
+                    <span><strong>p</strong> verwachte proportie</span>
+                    <span><strong>e</strong> foutmarge</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Gebaseerd op de formule van Cochran met eindige-populatiecorrectie</p>
+        </footer>
+    </div>
 
     <script>
-        // Sliders
-        const foutmargeSlider = document.getElementById('foutmarge');
-        const proportieSlider = document.getElementById('proportie');
-        const foutmargeWaarde = document.getElementById('foutmargeWaarde');
-        const proportieWaarde = document.getElementById('proportieWaarde');
+        let zScore = 1.96;
+        let niveau = 95;
 
-        foutmargeSlider.addEventListener('input', function() {
-            foutmargeWaarde.textContent = '±' + this.value + '%';
-        });
+        function kiesNiveau(btn) {
+            document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            zScore = parseFloat(btn.dataset.z);
+            niveau = parseInt(btn.dataset.n);
+            bereken();
+        }
 
-        proportieSlider.addEventListener('input', function() {
-            proportieWaarde.textContent = this.value + '%';
-        });
+        function updateFoutmarge() {
+            const val = document.getElementById('foutmarge').value;
+            document.getElementById('foutmargeWaarde').textContent = '±' + val + '%';
+            bereken();
+        }
 
-        // Knoppen
-        document.querySelectorAll('.btn-option').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.btn-option').forEach(b => b.classList.remove('actief'));
-                this.classList.add('actief');
-                document.getElementById('zScore').value = this.dataset.z;
-                document.getElementById('betrouwbaarheid').value = this.dataset.niveau;
-            });
-        });
+        function updateProportie() {
+            const val = document.getElementById('proportie').value;
+            document.getElementById('proportieWaarde').textContent = val + '%';
+            bereken();
+        }
 
-        // Berekening
         function bereken() {
             const N = parseFloat(document.getElementById('populatie').value) || 1000000000;
-            const Z = parseFloat(document.getElementById('zScore').value);
-            const betrouwbaarheid = document.getElementById('betrouwbaarheid').value;
-            const e = parseFloat(foutmargeSlider.value) / 100;
-            const p = parseFloat(proportieSlider.value) / 100;
+            const Z = zScore;
+            const e = parseFloat(document.getElementById('foutmarge').value) / 100;
+            const p = parseFloat(document.getElementById('proportie').value) / 100;
 
             // Cochran
             const n0 = (Z * Z * p * (1 - p)) / (e * e);
-
-            // Eindige populatie correctie
             const n = Math.ceil(n0 / (1 + ((n0 - 1) / N)));
 
-            // Update resultaten
-            document.getElementById('steekproefGrootte').textContent = n.toLocaleString('nl-BE');
-            document.getElementById('resBetrouwbaarheid').textContent = betrouwbaarheid + '%';
-            document.getElementById('resFoutmarge').textContent = '±' + foutmargeSlider.value + '%';
+            // Update resultaat
+            document.getElementById('resultaatGetal').textContent = n.toLocaleString('nl-BE');
+            document.getElementById('metaBetrouwbaarheid').textContent = niveau + '%';
+            document.getElementById('metaFoutmarge').textContent = '±' + document.getElementById('foutmarge').value + '%';
             
-            const aandeel = (n / N * 100);
-            document.getElementById('resAandeel').textContent = 
-                aandeel < 0.01 ? '<0,01%' : 
-                aandeel.toLocaleString('nl-BE', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '%';
+            const fractie = (n / N * 100);
+            document.getElementById('metaFractie').textContent = 
+                fractie < 0.01 ? '<0,01%' : 
+                fractie.toLocaleString('nl-BE', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '%';
 
             // Voorbeeld
-            const voorbeeldP = 60;
-            const marge = parseFloat(foutmargeSlider.value);
-            document.getElementById('vbPercentage').textContent = voorbeeldP + '%';
-            document.getElementById('vbBetrouwbaarheid').textContent = betrouwbaarheid + '%';
-            document.getElementById('vbOnder').textContent = (voorbeeldP - marge) + '%';
-            document.getElementById('vbBoven').textContent = (voorbeeldP + marge) + '%';
+            const marge = parseFloat(document.getElementById('foutmarge').value);
+            document.getElementById('vbPct').textContent = '60%';
+            document.getElementById('vbConf').textContent = niveau + '%';
+            document.getElementById('vbLo').textContent = (60 - marge) + '%';
+            document.getElementById('vbHi').textContent = (60 + marge) + '%';
 
             // Non-respons
             const uitnodigingen = Math.ceil(n / 0.4);
             document.getElementById('uitnodigingen').textContent = uitnodigingen.toLocaleString('nl-BE');
             document.getElementById('benodigdVoor').textContent = n.toLocaleString('nl-BE');
-
-            // Toon
-            const resultaatDiv = document.getElementById('resultaat');
-            resultaatDiv.classList.remove('verborgen');
-            resultaatDiv.classList.add('toon');
-            resultaatDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Init
         bereken();
     </script>
 </body>
